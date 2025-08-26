@@ -12,9 +12,4 @@ public class DemoApplication {
 		HelloClass helloClass = ctx.getBean(HelloClass.class);
 		System.out.println(helloClass.sayHello());
 	}
-
-	// @Bean
-	// public HelloClass helloClass() {
-	// return new HelloClass();
-	// }
 }
