@@ -13,7 +13,7 @@ public class MyFirstService {
     public MyFirstService (@Qualifier("bean1") HelloClass helloClass) {
         this.helloClass = helloClass;
     }
-    
+
 
     public String tellAStory() {
         return "the dependency is saying: " + helloClass.sayHello();
