@@ -13,8 +13,8 @@ public class DemoApplication {
 		System.out.println(helloClass.sayHello());
 	}
 
-	@Bean
-	public HelloClass helloClass() {
-		return new HelloClass();
-	}
+//	@Bean
+//	public HelloClass helloClass() {
+//		return new HelloClass();
+//	}
 }
