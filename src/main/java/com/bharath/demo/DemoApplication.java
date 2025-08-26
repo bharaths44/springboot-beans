@@ -2,7 +2,6 @@ package com.bharath.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class DemoApplication {
@@ -10,6 +9,6 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		var ctx = SpringApplication.run(DemoApplication.class, args);
 		MyFirstService service = ctx.getBean(MyFirstService.class);
-		System.out.println(service.tellAStory());
+		System.out.println(service.getJavaVersion());
 	}
 }
