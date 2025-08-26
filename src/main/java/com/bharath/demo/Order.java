@@ -1,10 +1,19 @@
 package com.bharath.demo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Order {
+
+    @JsonProperty("c-name")
     private String customerName;
+
+    @JsonProperty("p-name")
     private String productName;
+
+    @JsonProperty("quantity")
     private int quantity;
 
+    // should match the JSON property name
     public String getCustomerName() {
         return customerName;
     }

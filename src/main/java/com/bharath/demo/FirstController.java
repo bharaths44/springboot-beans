@@ -14,12 +14,12 @@ public class FirstController {
     }
 
     @PostMapping("/post")
-    public String post(@RequestBody String message){
-        	return "Posted message: " + message;
+    public String post(@RequestBody String message) {
+        return "Posted message: " + message;
     }
 
     @PostMapping("/post-order")
-    public String post(@RequestBody Order order){
+    public String post(@RequestBody Order order) {
         return "Posted message: " + order.toString();
     }
 }
