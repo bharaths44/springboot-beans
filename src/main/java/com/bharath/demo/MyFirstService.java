@@ -7,13 +7,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MyFirstService {
-    private final HelloClass helloClass;
-
     @Autowired
-    public MyFirstService(
-            @Qualifier("bean2") HelloClass helloClass) {
-        this.helloClass = helloClass;
-    }
+    private  HelloClass helloClass;
+
+
 
     public String tellAStory() {
         return "the dependency is saying: " + helloClass.sayHello();
