@@ -9,7 +9,7 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		var ctx = SpringApplication.run(DemoApplication.class, args);
-		HelloClass helloClass = ctx.getBean(HelloClass.class);
+		HelloClass helloClass = ctx.getBean("myFirstBean", HelloClass.class);
 		System.out.println(helloClass.sayHello());
 	}
 }

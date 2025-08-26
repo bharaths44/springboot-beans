@@ -1,10 +1,11 @@
 package com.bharath.demo;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class HelloClass {
+    private  String myVar;
+    public HelloClass(String myVar){
+        this.myVar = myVar;
+    }
     public String sayHello() {
-        return "Hello, World!";
+        return "Hello from HelloClass: " + myVar;
     }
 }
