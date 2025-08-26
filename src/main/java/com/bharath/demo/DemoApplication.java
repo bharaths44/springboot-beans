@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Bean;
 public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-		HelloClass helloClass = new HelloClass();
+		var ctx = SpringApplication.run(DemoApplication.class, args);
+		HelloClass helloClass = ctx.getBean(HelloClass.class);
 		System.out.println(helloClass.sayHello());
 	}
 
