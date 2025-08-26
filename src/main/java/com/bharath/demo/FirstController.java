@@ -1,9 +1,6 @@
 package com.bharath.demo;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class FirstController {
@@ -22,8 +19,15 @@ public class FirstController {
     public String post(@RequestBody Order order) {
         return "Posted message: " + order.toString();
     }
+
     @PostMapping("/post-order-record")
     public String postRecord(@RequestBody OrderRecord order) {
         return "Posted message: " + order.toString();
     }
+
+    @GetMapping("/hello/{user-name}")
+    public String pathVar(@PathVariable("user-name") String userName) {
+        return "Hello " + userName;
+    }
+
 }
