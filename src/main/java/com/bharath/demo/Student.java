@@ -1,22 +1,49 @@
 package com.bharath.demo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "students")
+// @Table(name = "students") give different table name
 public class Student {
     @Id
+    @GeneratedValue // auto generate id
     private Integer id;
 
+    // @Column(name = "first_name",length=20) give different column name,give
+    // specific length
     private String firstName;
 
     private String lastName;
 
+    // @Column(unique = true,updatable=false,insertable) // email should be
+    // unique,not updatable,not insertable
     private String email;
 
     private int age;
+
+    @ManyToOne()
+    @JoinColumn(name = "school_id") // foreign key column in Student table
+    private School school;
+
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL) // one-to-one relationship with StudentProfile
+    private StudentProfile studentProfile;
+
+    public School getSchool() {
+        return school;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
+    }
+
+    public StudentProfile getStudentProfile() {
+        return studentProfile;
+    }
+
+    public void setStudentProfile(StudentProfile studentProfile) {
+        this.studentProfile = studentProfile;
+    }
+
 
     public Student() {
     }
@@ -55,7 +82,6 @@ public class Student {
     public String getEmail() {
         return email;
     }
-
 
     public void setEmail(String email) {
         this.email = email;
