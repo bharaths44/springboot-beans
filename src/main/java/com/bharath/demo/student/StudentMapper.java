@@ -20,10 +20,7 @@ public class StudentMapper {
 	}
 
 	public StudentResponseDto toResponseDto(Student student) {
-		return new StudentResponseDto(
-				student.getFirstName(),
-				student.getLastName(),
-				student.getEmail());
+		return new StudentResponseDto(student.getFirstName(), student.getLastName(), student.getEmail());
 	}
 
 }

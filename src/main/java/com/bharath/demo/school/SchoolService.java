@@ -24,9 +24,9 @@ public class SchoolService {
 
 	public List<SchoolDto> findAll() {
 		return schoolRepository.findAll()
-				.stream()
-				.map(mapper::toSchoolDto)
-				.collect(Collectors.toList());
+							   .stream()
+							   .map(mapper::toSchoolDto)
+							   .collect(Collectors.toList());
 
 	}
 

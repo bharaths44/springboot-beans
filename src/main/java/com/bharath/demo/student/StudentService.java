@@ -22,8 +22,8 @@ public class StudentService {
 
 	public StudentResponseDto findStudentById(Integer id) {
 		return repository.findById(id)
-				.map(mapper::toResponseDto)
-				.orElse(null);
+						 .map(mapper::toResponseDto)
+						 .orElse(null);
 	}
 
 	public List<StudentResponseDto> findAllStudents() {
