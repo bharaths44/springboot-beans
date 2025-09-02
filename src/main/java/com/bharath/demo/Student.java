@@ -1,5 +1,6 @@
 package com.bharath.demo;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -22,7 +23,8 @@ public class Student {
     private int age;
 
     @ManyToOne()
-    @JoinColumn(name = "school_id") // foreign key column in Student table
+    @JoinColumn(name = "school_id")// foreign key column in Student table
+    @JsonBackReference
     private School school;
 
     @OneToOne(mappedBy = "student", cascade = CascadeType.ALL) // one-to-one relationship with StudentProfile
