@@ -1,5 +1,6 @@
-package com.bharath.demo;
+package com.bharath.demo.student;
 
+import com.bharath.demo.school.School;
 import org.springframework.stereotype.Service;
 
 @Service

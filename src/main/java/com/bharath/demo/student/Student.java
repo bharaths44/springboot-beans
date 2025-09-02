@@ -1,5 +1,7 @@
-package com.bharath.demo;
+package com.bharath.demo.student;
 
+import com.bharath.demo.school.School;
+import com.bharath.demo.studentProfile.StudentProfile;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 

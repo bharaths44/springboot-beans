@@ -1,5 +1,6 @@
-package com.bharath.demo;
+package com.bharath.demo.school;
 
+import com.bharath.demo.student.Student;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

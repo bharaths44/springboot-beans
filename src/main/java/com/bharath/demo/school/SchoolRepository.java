@@ -1,4 +1,4 @@
-package com.bharath.demo;
+package com.bharath.demo.school;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

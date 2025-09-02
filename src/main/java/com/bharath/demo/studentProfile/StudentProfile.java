@@ -1,5 +1,6 @@
-package com.bharath.demo;
+package com.bharath.demo.studentProfile;
 
+import com.bharath.demo.student.Student;
 import jakarta.persistence.*;
 
 
