@@ -6,39 +6,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 public class SchoolController {
 
-    private final SchoolRepository schoolRepository;
+    private final SchoolService schoolService;
 
-    public SchoolController(SchoolRepository schoolRepository) {
-        this.schoolRepository = schoolRepository;
-    }
-
-    private School toSchool(SchoolDto dto) {
-        return new School(dto.name());
+    public SchoolController(SchoolService schoolService) {
+        this.schoolService = schoolService;
     }
 
     @PostMapping("/schools")
     public SchoolDto create(@RequestBody SchoolDto dto) {
-        var school = toSchool(dto);
-        var savedSchool = schoolRepository.save(school);
-        return dto;
-
-    }
-
-    private SchoolDto toSchoolDto(School school) {
-        return new SchoolDto(school.getName());
+        return schoolService.create(dto);
     }
 
     @GetMapping("/schools")
     public List<SchoolDto> findAll() {
-        return schoolRepository.findAll()
-                .stream()
-                .map(this::toSchoolDto)
-                .collect(Collectors.toList());
+        return schoolService.findAll();
 
     }
 }
